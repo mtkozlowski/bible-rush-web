@@ -1,27 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
-import { LargeButton } from '../elements/Buttons';
-import { Link } from "react-router-dom";
 
 const Nav = styled.nav`
-    ${({theme}) => theme.media.phone} {
-        margin-top: 0;
+    a {
+        color: ${({theme}) => theme.colors.darkblue };
+        display: inline-block;
+        margin: 0.2rem 0 0.2rem 1em;
+        text-decoration: none;
+        padding: 0.4rem 0.6rem 0.3rem;
     }
-
-    ${({atHome})  => atHome && `
-        margin-top: 3rem;
-        margin-left: auto;
-    `};
+    a:hover {
+        border-radius: 1rem;
+        background-color: ${({theme}) => theme.colors.darkblue };
+        color: ${({theme}) => theme.colors.white };
+    }
 
     ${({theme}) => theme.media.tablet} {
         margin-top: 0;
     }
 `;
 
-const Navigation = ({ atHome }) => (
-    <Nav atHome={atHome} >
-        <LargeButton as={Link} to="/blog" >Blog</LargeButton>
-    </Nav>
-);
-
-export default Navigation;
+export default Nav;

@@ -14,8 +14,7 @@ const GlobalStyle = createGlobalStyle`
         font-size: ${({theme}) => theme.typography.baseFontSize};
         color: ${({theme}) => theme.colors.dark};
 
-        background-color: ${({theme}) => theme.colors.lightgrey};
-        padding-top: 1px;
+        /* background-color: ${({theme}) => theme.colors.lightgrey}; */
     }
 `;
 

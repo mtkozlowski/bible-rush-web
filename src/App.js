@@ -1,13 +1,35 @@
 import React from 'react';
+import styled from 'styled-components';
 import Layout from './styles/Organisms/Layout';
 import SearchForm from './styles/Molecules/SearchForm';
+import ResultList from './styles/Organisms/ResultList';
+import {BrowserRouter as Router, Link, Switch, Route} from 'react-router-dom';
+import Header from './styles/Organisms/Header';
+import { H1 } from './styles/Atoms/Headings';
+import RegularSection from './styles/Templates/RegularSection';
+import Nav from './styles/Molecules/Navigation';
+import About from './pages/about';
+import Support from './pages/support';
+import Details from './pages/details';
+
+
+const Main = styled.main`
+    width: ${({theme}) => theme.regularSection};
+    max-width: 100%;
+    margin: 0 auto;
+`;
+
+const HeaderTop = styled.div`
+    background-color: ${({ theme }) => theme.colors.grey};
+    text-align: right;
+`;
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       formTextValue: "",
-      serverResponse: ""
+      serverResponse: []
     };
   }
 
@@ -30,19 +52,40 @@ class App extends React.Component {
     this.setState({formTextValue: data});
   }
 
+  Home = () => (
+    <Main>
+        <SearchForm onFormSubmit={this.handleSubmit} onFormValueChange={this.handleChange}/>
+        <ResultList cardsData={this.state.serverResponse} />
+    </Main>
+  )
+
   render () {
+
     return (
       <Layout>
-        <SearchForm onFormSubmit={this.handleSubmit} onFormValueChange={this.handleChange}/>
-        {this.state.serverResponse &&
-          this.state.serverResponse.map(r => (
-            <li>{r.videoId}</li>
-          ))
-        }
-        {!this.state.serverResponse && <p>Check this out!</p>}
+        <Router>
+          <Header>
+            <HeaderTop>
+                <RegularSection as={Nav}>
+                    <Link to="/">Home</Link>
+                    <Link to="/support">Wesprzyj</Link>
+                    <Link to="/about">O projekcie</Link>
+                    <a href="//codeforheaven.com">Autor</a>
+                </RegularSection>
+            </HeaderTop>
+            <RegularSection style={{ margin: "7.2vw auto"}}>
+                <H1 superBig>Szukaj Słowa<span>!</span></H1>
+            </RegularSection>
+          </Header>
+          <Switch>
+            <Route path="/" exact component={this.Home} />
+            <Route path="/support" component={About} />
+            <Route path="/about" component={Support} />
+            <Route path="/details/:id" component={Details} />
+          </Switch>
+        </Router>
       </Layout>
     );
-
   }
 }
 

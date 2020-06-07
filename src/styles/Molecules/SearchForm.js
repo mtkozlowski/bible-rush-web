@@ -1,9 +1,29 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Button } from '../Atoms/Buttons';
+import { LargeButton } from '../Atoms/Buttons';
+import { H3 } from '../Atoms/Headings';
 
 const Label = styled.label`
-  display: block;
+  display: inline-block;
+  margin-right: 2rem;
+`;
+
+const StyledInput = styled.input`
+  font-size: 1.2rem;
+  height: 2.5rem;
+  display: inline-block;
+  width: 480px;
+  border-radius: 1rem;
+  padding: 0 0.6rem;
+
+  :focus {
+    outline: none;
+    box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
+  }
+`;
+
+const StyledForm = styled.form`
+  margin-bottom: 6rem;
 `;
 
 class SearchForm extends React.Component {
@@ -29,13 +49,14 @@ class SearchForm extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <StyledForm onSubmit={this.handleSubmit}>
+        <H3>Szukaj komentarzy do Słowa Bożego za pomocą sigli:</H3>
+
         <Label>
-          Szukaj komentarzy do Słowa Bożego za pomocą sigli i słów kluczowych:
-          <input type="text" onChange={this.handleChange} />
+          Sigle: <StyledInput type="text" onChange={this.handleChange} />
         </Label>
-        <Button type="submit">Search!</Button>
-      </form>
+        <LargeButton type="submit">Search!</LargeButton>
+      </StyledForm>
     );
   }
 }
