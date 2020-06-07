@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import RegularSection from '../Templates/RegularSection';
 import ResourceCard from '../Molecules/ResourceCard';
 

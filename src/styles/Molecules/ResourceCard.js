@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { H3, H4, H5 } from '../Atoms/Headings';
+import { H3, H4 } from '../Atoms/Headings';
 import { Link } from 'react-router-dom';
 
 const StyledCard = styled.div`
