@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import RegularSelection from '../styles/Templates/RegularSection';
 import styled from 'styled-components';
-
-const Main = styled.main`
-
-`;
+import Main from '../styles/Templates/Main';
+import RegularSelection from '../styles/Templates/RegularSection';
 
 function Details ({ match }) {
     useEffect(() => {
@@ -25,11 +22,13 @@ function Details ({ match }) {
 
 
     return (
-        <RegularSelection as={Main}>
-            <h1>Details!</h1>
-            <img src={item.thumbnailsSlug} alt="thumbnailsSlug" />
-            {item.title}
-        </RegularSelection>
+        <Main>
+            <RegularSelection>
+                <h1>Details!</h1>
+                <img src={item.thumbnailsSlug} alt="thumbnailsSlug" />
+                {item.title}
+            </RegularSelection>
+        </Main>
     )
 }
 

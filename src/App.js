@@ -6,18 +6,14 @@ import ResultList from './styles/Organisms/ResultList';
 import {BrowserRouter as Router, Link, Switch, Route} from 'react-router-dom';
 import Header from './styles/Organisms/Header';
 import { H1 } from './styles/Atoms/Headings';
-import RegularSection from './styles/Templates/RegularSection';
 import Nav from './styles/Molecules/Navigation';
+import Main from './styles/Templates/Main';
+import RegularSection from './styles/Templates/RegularSection';
+
 import About from './pages/about';
 import Support from './pages/support';
 import Details from './pages/details';
-
-
-const Main = styled.main`
-    width: ${({theme}) => theme.regularSection};
-    max-width: 100%;
-    margin: 0 auto;
-`;
+import Manage from './manage/manage';
 
 const HeaderTop = styled.div`
     background-color: ${({ theme }) => theme.colors.grey};
@@ -54,8 +50,10 @@ class App extends React.Component {
 
   Home = () => (
     <Main>
+      <RegularSection>
         <SearchForm onFormSubmit={this.handleSubmit} onFormValueChange={this.handleChange}/>
         <ResultList cardsData={this.state.serverResponse} />
+      </RegularSection>
     </Main>
   )
 
@@ -82,6 +80,7 @@ class App extends React.Component {
             <Route path="/support" component={About} />
             <Route path="/about" component={Support} />
             <Route path="/details/:id" component={Details} />
+            <Route path="/manage" component={Manage} />
           </Switch>
         </Router>
       </Layout>
