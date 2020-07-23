@@ -11,6 +11,7 @@ import Main from './styles/Templates/Main';
 import RegularSection from './styles/Templates/RegularSection';
 
 import About from './pages/about';
+import Add from './pages/add';
 import Support from './pages/support';
 import Details from './pages/details';
 import Manage from './manage/manage';
@@ -30,6 +31,10 @@ class App extends React.Component {
   }
 
   callServer() {
+    if(this.state.formTextValue === "") {
+      return;
+    }
+
     const url = new URL("http://localhost:8000/search");
     const params = {query: this.state.formTextValue};
 
@@ -72,11 +77,12 @@ class App extends React.Component {
                 </RegularSection>
             </HeaderTop>
             <RegularSection style={{ margin: "7.2vw auto"}}>
-                <H1 superBig>Szukaj Słowa<span>!</span></H1>
+                <H1>Szukaj Słowa<span>!</span></H1>
             </RegularSection>
           </Header>
           <Switch>
             <Route path="/" exact component={this.Home} />
+            <Route path="/add" exact component={Add} />
             <Route path="/support" component={About} />
             <Route path="/about" component={Support} />
             <Route path="/details/:id" component={Details} />
