@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
-import { LargeButton } from '../Atoms/Buttons';
-import { H3 } from '../Atoms/Headings';
+import React from "react";
+import styled from "styled-components";
+import { LargeButton } from "../Atoms/Buttons";
+import { H3 } from "../Atoms/Headings";
 
 const Label = styled.label`
   display: inline-block;
@@ -18,7 +18,8 @@ const StyledInput = styled.input`
 
   :focus {
     outline: none;
-    box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
+    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+      0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
   }
 `;
 
@@ -31,7 +32,7 @@ class SearchForm extends React.Component {
     super(props);
     this.state = {
       serverResponse: "",
-      value: ""
+      value: "",
     };
 
     this.handleChange = this.handleChange.bind(this);

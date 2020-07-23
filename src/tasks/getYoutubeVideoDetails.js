@@ -1,8 +1,5 @@
-import youtubeKey from '../config/youtubeKey';
+import youtubeKey from "../config/youtubeKey";
 
-function getYoutubeVideoDetails (url) {
-
-
-}
+function getYoutubeVideoDetails(url) {}
 
 export default getYoutubeVideoDetails;

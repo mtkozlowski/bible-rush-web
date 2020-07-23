@@ -1,15 +1,15 @@
-import React from 'react';
-import {ThemeProvider} from 'styled-components';
-import GlobalStyle from '../GlobalStyle';
-import theme from '../theme';
+import React from "react";
+import { ThemeProvider } from "styled-components";
+import GlobalStyle from "../GlobalStyle";
+import theme from "../theme";
 
-const Layout = ({children}) => (
-    <ThemeProvider theme={theme}>
-        <>
-        <GlobalStyle/>
-        {children}
+const Layout = ({ children }) => (
+  <ThemeProvider theme={theme}>
+    <>
+      <GlobalStyle />
+      {children}
     </>
-    </ThemeProvider>
+  </ThemeProvider>
 );
 
 export default Layout;
