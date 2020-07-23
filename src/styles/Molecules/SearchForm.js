@@ -4,8 +4,8 @@ import { LargeButton } from "../Atoms/Buttons";
 import { H3 } from "../Atoms/Headings";
 
 const Label = styled.label`
-  display: inline-block;
-  margin-right: 2rem;
+  display: block;
+  padding: 0 0 1em 0;
 `;
 
 const StyledInput = styled.input`
@@ -13,8 +13,9 @@ const StyledInput = styled.input`
   height: 2.5rem;
   display: inline-block;
   width: 480px;
-  border-radius: 1rem;
-  padding: 0 0.6rem;
+  border-radius: 12px;
+  padding: 1.4rem 1rem;
+  margin: 0 1.6rem 0 0;
 
   :focus {
     outline: none;
@@ -51,11 +52,8 @@ class SearchForm extends React.Component {
   render() {
     return (
       <StyledForm onSubmit={this.handleSubmit}>
-        <H3>Szukaj komentarzy do Słowa Bożego za pomocą sigli:</H3>
-
-        <Label>
-          Sigle: <StyledInput type="text" onChange={this.handleChange} />
-        </Label>
+        <Label for="sigleInput">Szukaj komentarzy do Słowa Bożego za pomocą sigli:</Label>
+        <StyledInput id="sigleInput" type="text" onChange={this.handleChange} />
         <LargeButton type="submit">Search!</LargeButton>
       </StyledForm>
     );

@@ -1,7 +1,9 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
-    ${({ theme }) => theme.typography.fontImport}
+    ${({ theme }) => theme.typography.primaryFont.fontImport}
+    ${({ theme }) => theme.typography.secondaryFont.fontImport}
+
     *, *::before, *::after {box-sizing: border-box;}
 
     html, body {
@@ -10,11 +12,13 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        font-family: ${({ theme }) => theme.typography.fontFamily};
+        font-family: ${({ theme }) => theme.typography.primaryFont.fontFamily};
         font-size: ${({ theme }) => theme.typography.baseFontSize};
-        color: ${({ theme }) => theme.colors.dark};
+        color: ${({ theme }) => theme.colors.black};
+    }
 
-        /* background-color: ${({ theme }) => theme.colors.lightgrey}; */
+    h1, h2 {
+        font-family: ${({ theme }) => theme.typography.secondaryFont.fontFamily};
     }
 `;
 

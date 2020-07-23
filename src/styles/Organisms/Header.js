@@ -4,18 +4,10 @@ const Header = styled.header`
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 0 0 1.6rem 0;
+  padding:  8rem 0;
   transition: translate 0.9s ease-in-out;
 
-  @media (min-width: 1080px) {
-    ${({ atHome }) =>
-      atHome &&
-      `
-            transform: translateY(8rem);
-        `};
-  }
-
-  ${({ theme }) => theme.media.tablet} {
+  ${({ theme }) => theme.media.regularSection} {
     padding: 1.6rem 0.8rem;
   }
 `;

@@ -4,7 +4,6 @@ const PageHeader = styled.h1`
   font-size: 120px;
   margin: 0 0 80px;
   line-height: 1;
-  color: ${({ theme }) => theme.colors.blue};
 `;
 
 const CommonStyle = css`
@@ -18,14 +17,11 @@ export const H1 = styled.h1`
     ${(props) =>
       props.superBig &&
       css`
-        font-size: 9vw;
-        letter-spacing: -0.3vw;
-        line-height: 7.2vw;
-        text-indent: -0.15em;
-        padding-left: 0.15em;
+        font-size: 8rem;
+        letter-spacing: -0.3rem;
+        line-height: 7.2rem;
 
         span {
-          font-size: 2em;
           display: inline-block;
           margin-left: 0.08em;
         }

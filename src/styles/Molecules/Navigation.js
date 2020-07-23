@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 const Nav = styled.nav`
   a {
-    color: ${({ theme }) => theme.colors.darkblue};
     display: inline-block;
     margin: 0.2rem 0 0.2rem 1em;
     text-decoration: none;
@@ -10,11 +9,9 @@ const Nav = styled.nav`
   }
   a:hover {
     border-radius: 1rem;
-    background-color: ${({ theme }) => theme.colors.darkblue};
-    color: ${({ theme }) => theme.colors.white};
   }
 
-  ${({ theme }) => theme.media.tablet} {
+  ${({ theme }) => theme.media.regularSection} {
     margin-top: 0;
   }
 `;
