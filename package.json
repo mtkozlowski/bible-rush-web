@@ -14,7 +14,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "format": "prettier --write \"**/*.{js,jsx,json}\""
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -32,6 +33,7 @@
     ]
   },
   "devDependencies": {
+    "prettier": "^2.0.5",
     "react-router-dom": "^5.2.0",
     "styled-components": "^5.1.1"
   }
