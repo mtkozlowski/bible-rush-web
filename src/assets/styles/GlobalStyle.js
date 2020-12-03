@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
     ${({ theme }) => theme.typography.primaryFont.fontImport}
@@ -18,8 +18,12 @@ const GlobalStyle = createGlobalStyle`
     }
 
     h1, h2 {
-        font-family: ${({ theme }) => theme.typography.secondaryFont.fontFamily};
+        font-family: ${({ theme }) =>
+          theme.typography.secondaryFont.fontFamily};
+        a {text-decoration: none}
     }
+
+    a {color: ${({ theme }) => theme.colors.black}}
 `;
 
 export default GlobalStyle;
