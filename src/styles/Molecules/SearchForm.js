@@ -1,7 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { LargeButton } from "../Atoms/Buttons";
-import { H3 } from "../Atoms/Headings";
+import React from 'react';
+import styled from 'styled-components';
+import { LargeButton } from '../Atoms/Buttons';
 
 const Label = styled.label`
   display: block;
@@ -25,35 +24,25 @@ const StyledInput = styled.input`
 `;
 
 const StyledForm = styled.form`
-  margin-bottom: 6rem;
+  margin-bottom: 2rem;
 `;
 
 class SearchForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      serverResponse: "",
-      value: "",
-    };
+    this.state = {};
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(event) {
-    this.props.onFormValueChange(event.target.value);
-  }
-
-  handleSubmit(event) {
-    event.preventDefault();
-    this.props.onFormSubmit();
-  }
-
   render() {
     return (
-      <StyledForm onSubmit={this.handleSubmit}>
-        <Label for="sigleInput">Szukaj komentarzy do Słowa Bożego za pomocą sigli:</Label>
-        <StyledInput id="sigleInput" type="text" onChange={this.handleChange} />
+      <StyledForm>
+        <Label htmlFor="sigleInput">
+          Szukaj komentarzy do Słowa Bożego za pomocą sigli:
+        </Label>
+        <StyledInput id="sigleInput" type="text" />
         <LargeButton type="submit">Search!</LargeButton>
       </StyledForm>
     );
